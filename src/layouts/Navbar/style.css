@@ -1,0 +1,88 @@
+.navbar-container {
+  /* @apply !px-0 w-full h-[5.5em] bg-dark-main; */
+  @apply !px-0 w-full lg:w-[90%] sm:w-full lg:mt-[30px] absolute py-5;
+  /* margin-top: 73px; */
+  padding-inline: 50px;
+  z-index: 50;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.navbar-fixed {
+  @apply w-full lg:w-[90%] fixed top-0 py-2 lg:mt-[30px] bg-black bg-opacity-50 text-white;
+  /* margin-top: 73px; */
+  z-index: 1000;
+  left: 50%;
+  backdrop-filter: blur(10px);
+  transform: translateX(-50%);
+}
+
+.navbar,
+.navbar-scroll {
+  @apply max-w-screen-xl w-full h-full m-auto;
+  @apply flex flex-wrap justify-between items-center;
+  @apply px-2 sm:px-4;
+
+  transition: linear;
+  transition-delay: 0.2s;
+  transition-duration: 0.2s;
+}
+
+.navbar {
+  @apply relative h-full;
+  /* @apply border-b border-b-primary; */
+}
+
+.navbar-scroll {
+  @apply py-2 animate-fadeInDownBase;
+}
+
+.navbar-title {
+  /* @apply bg-lime-zest; */
+  @apply bg-chr-primary;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.logo-container {
+  @apply flex cursor-pointer w-full sm:w-auto;
+}
+
+.small-title {
+  @apply md:hidden flex justify-center w-1/2 sm:w-2/3 text-center text-3xl font-extrabold bg-chr-primary;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.nav-tg-btn {
+  @apply w-full text-white lg:p-6;
+  border: 2px solid white;
+  transition: transform 0.3s ease;
+}
+
+.nav-tg-btn:hover {
+  @apply w-full text-[#01FFF9] bg-white lg:p-6;
+  /* background: linear-gradient(#111114 0 0) padding-box,
+    linear-gradient(152.64deg, #247be1 0%, #929BFF 100%) border-box; */
+  /* color: white; */
+  /* border: 2px solid transparent; */
+}
+
+.nav-menu-btn {
+  @apply bg-transparent hover:bg-transparent active:bg-transparent focus:bg-transparent text-[#01FFF9];
+  transition: 0.3s ease-in-out;
+}
+
+@media (min-width: theme("screens.md")) {
+  .logo-container {
+    @apply ml-0 mr-2;
+  }
+}
+
+@media (min-width: theme("screens.2xl")) {
+  .logo-container {
+    margin-right: 1.25rem;
+  }
+}

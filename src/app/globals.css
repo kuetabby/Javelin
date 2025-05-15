@@ -1,0 +1,97 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* :root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+} */
+
+html,
+body {
+  /* overflow-x: hidden; */
+  scroll-behavior: smooth;
+}
+
+body {
+  color: white;
+  @apply bg-dark-main;
+  /* background: black; */
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+@keyframes twinkle {
+  0%, 100% {
+    opacity: 0.25;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.twinkle {
+  animation: twinkle 3s infinite;
+}
+
+.gradient-border {
+  position: relative;
+  padding: 2px;
+  border-radius: 8px; /* Adjust according to your border radius */
+  background: linear-gradient(to right, black, transparent);
+}
+
+.gradient-border::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  border-radius: 8px; /* Adjust according to your border radius */
+  background: white; /* Inner background color */
+}
+
+/* globals.css / tailwind @layer utilities */
+/* ================= HERO BG ================= */
+.hero-bg  { @apply relative isolate overflow-hidden; }
+.hero-bg__img {
+  position: absolute;
+  inset: 0;
+  width: 100%;       /* kunci: pakai 100% + height 100% */
+  height: 100%;
+  object-fit: cover; /* cover = selalu penuh            */
+  object-position: top center;
+  z-index: -1;
+  pointer-events: none;
+  user-select: none;
+  transform: scale(1.05); /* overscan 5 % hilangkan garis tipis */
+}
+
+/* landscape ultra-wide (> 11/10) boleh pakai tinggi supaya kiri-kanan terisi */
+@media (min-aspect-ratio: 11/10) {
+  .hero-bg__img {
+    width: auto;
+    height: 100%;
+    transform: scale(1.0);     /* cukup tinggi penuh, tak perlu overscan */
+  }
+}
+
+
+.nav-glass {
+  @apply backdrop-blur-md bg-black/70 shadow-lg;
+}

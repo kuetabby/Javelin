@@ -1,0 +1,80 @@
+/* .base-side-container {
+  @apply w-full flex-1;
+}
+
+.left-side-container {
+  @apply flex items-center justify-start;
+}
+
+.right-side-container {
+  @apply items-center justify-end;
+} */
+
+.base-main-container {
+  /* @apply w-full h-full min-h-screen bg-black mb-16 sm:mb-0 text-white; */
+  @apply w-full h-full bg-[#0E0F0E] min-h-screen mb-0 text-white;
+  /* background: #272363; */
+  /* backdrop-filter: blur(30px); */
+
+  /* @apply w-full h-full min-h-screen mb-0 text-white; */
+}
+
+/* .nav-anchor {
+  @apply bg-white hover:bg-lime-zest font-bold;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.nav-anchor-active {
+  @apply text-white font-bold underline underline-offset-[0.6em] decoration-[3px] decoration-indigo-500;
+} */
+
+.nav-anchor,
+.nav-anchor-active {
+  @apply text-base md:text-xl;
+}
+
+.nav-anchor {
+  @apply bg-gradient-to-r from-[#DAF0F0] to-[#3BC6C7] bg-clip-text text-transparent
+  /* @apply text-white hover:text-[#01FFF9]; */
+  /* @apply bg-white hover:bg-lime-zest font-bold text-lg;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; */
+}
+
+.nav-anchor-active {
+  @apply text-white font-bold
+  /* @apply text-[#34C9DE]; */
+  /* @apply bg-lime-zest font-bold;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; */
+}
+
+
+/* Kustomisasi scrollbar dengan warna gradasi */
+::-webkit-scrollbar {
+  width: 12px;
+  /* Lebar scrollbar */
+}
+
+::-webkit-scrollbar-track {
+  background: black;
+  /* Warna lintasan scrollbar */
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(97.11deg, #59D279  37.38%, #91FFAE 115.64%);
+  /* Warna gradasi thumb scrollbar */
+  border-radius: 10px;
+  /* Membuat thumb menjadi bulat */
+  border: 1px solid black;
+  /* Border di sekitar thumb */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(97.11deg, #59D279  37.38%, #91FFAE 115.64%);
+  /* Warna gradasi thumb saat di-hover */
+}

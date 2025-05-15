@@ -1,0 +1,154 @@
+.homepage-container {
+  /* @apply w-full h-full p-2 px-4 sm:p-4 m-auto; */
+  @apply w-full h-full text-white m-auto;
+  /* max-width: 1440px; */
+}
+
+.app-title {
+  /* @apply text-primary font-bold; */
+  @apply bg-chr-secondary !font-bold;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.welcome-container {
+  @apply w-full h-[400px] sm:h-[500px] relative;
+  /* flex flex-wrap items-center justify-evenly sm:justify-center mx-auto text-lg xs:text-xl lg:text-2xl font-extrabold text-white gap-2 p-2 relative; */
+  /* @apply bg-opacity-50 bg-no-repeat bg-top bg-vector; */
+}
+
+.welcome-wrapper {
+  @apply w-full h-full flex flex-wrap justify-center mx-auto text-lg xs:text-xl lg:text-2xl text-white gap-2 py-2 relative;
+  @apply z-30;
+}
+
+.id-pages {
+  @apply w-4/5 xs:w-48 py-2 px-4 xl:px-6 rounded-3xl pointer-events-none;
+  background: linear-gradient(#000 0 0) padding-box,
+    linear-gradient(152.64deg, #247be1 0%, #00ff47 100%) border-box;
+  color: white;
+  border: 1px solid transparent;
+  display: inline-block;
+}
+
+.about-wrapper {
+  @apply w-full h-full flex flex-wrap text-lg xs:text-xl lg:text-2xl font-extrabold text-white gap-2 py-8 relative;
+  /* @apply border border-solid; */
+  @apply rounded-xl;
+  /* background: linear-gradient(180deg,
+      rgba(141, 141, 185, 0.16) 0%,
+      rgba(8, 8, 12, 0) 100%); */
+}
+
+.generate-container {
+  @apply w-11/12 lg:w-2/3 h-[800px] xs:h-[600px] rounded-xl flex flex-col justify-center px-2 relative z-30 mx-auto;
+  clip-path: xywh(0 5px 100% 90% round 15% 0);
+
+  background: linear-gradient(180deg,
+      rgba(141, 141, 185, 0.16) 0%,
+      rgba(8, 8, 12, 0) 100%);
+}
+
+.try-button {
+  @apply w-4/5 xs:w-auto py-2 px-4 xl:px-6 rounded-3xl;
+  background: linear-gradient(#111114 0 0) padding-box,
+    linear-gradient(152.64deg, #247be1 0%, #00ff47 100%) border-box;
+  color: white;
+  border: 1px solid transparent;
+  display: inline-block;
+}
+
+.try-button:hover {
+  background: linear-gradient(152.64deg, #247be1 0%, #00ff47 100%) border-box;
+}
+
+.welcome-bot-button,
+.bot-button {
+  /* clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%); */
+  @apply pl-0;
+  clip-path: polygon(0% 0%, 75% 0%, 100% 100%, 25% 100%);
+}
+
+.welcome-bot-button {
+  @apply w-52 rounded-lg text-black bg-white hover:bg-chr-secondary active:bg-chr-secondary focus:bg-chr-secondary;
+  /* transition: background-color 0.5s ease, border-color 0.5s ease; */
+  transition: transform 0.3s ease;
+}
+
+.bot-button {
+  @apply w-52 md:w-[30%] xl:w-1/4 rounded-lg text-white bg-chr-primary hover:bg-chr-secondary active:bg-chr-secondary focus:bg-chr-secondary;
+}
+
+.welcome-bot-button:hover {
+  transform: scale(1.05);
+}
+
+.bot-button:hover,
+.welcome-bot-button:hover {
+  background: linear-gradient(#111114 0 0) padding-box,
+    linear-gradient(152.64deg, #247be1 0%, #929bff 100%) border-box;
+  color: white;
+  border: 2px solid transparent;
+  /* transform: scale(1.1); */
+}
+
+.bot-button-icon {
+  @apply !animate-bounceSlow;
+}
+
+/* .welcome-bot-button:hover > span >  */
+.welcome-bot-icon {
+  @apply !animate-bounceSlow;
+  transition: 250;
+}
+
+.whitepaper-button {
+  @apply my-4 bg-chr-primary hover:bg-chr-primary active:bg-chr-primary focus:bg-chr-primary hover:text-white focus:text-white active:text-white;
+  transition: transform 0.3s ease;
+}
+
+.whitepaper-button:hover {
+  @apply pr-6;
+  transform: scale(1.1);
+  /* Increase the size by 10% on hover */
+}
+
+.whitepaper-button:hover>span>.whitepaper-icon {
+  /* @apply ml-2; */
+  transform: translateX(7px);
+}
+
+/* .socials-button {
+  @apply w-12 h-12 object-contain hover:scale-110;
+  transition: transform 0.3s ease;
+} */
+
+.socials-button {
+  @apply w-12 h-12 object-contain;
+  transition: transform 0.3s ease;
+  transform: scale(1.1);
+  /* Memperbesar elemen saat hover */
+  animation: rotate 2s linear infinite;
+  /* Animasi putaran */
+}
+
+/* Keyframes untuk animasi putaran */
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+    /* Putar elemen dari 0 derajat */
+  }
+
+  100% {
+    transform: rotate(360deg);
+    /* Putar elemen hingga 360 derajat */
+  }
+}
+
+.gradient-border {
+  border: 3px solid;
+  border-radius: 1.5rem;
+  border-image-source: linear-gradient(180deg, #FFFFFF -171.18%, rgba(255, 255, 255, 0) 100%);
+  border-image-slice: 1;
+}
