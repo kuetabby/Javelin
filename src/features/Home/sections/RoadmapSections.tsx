@@ -1,138 +1,129 @@
-import React from 'react';
-import { Box, Flex, Text, useBreakpointValue } from '@chakra-ui/react';
-import { roadmapData, Phase, Step } from '../constants/roadmap'; // Adjust the import path as needed
-import TextGradient from '@/components/Text/TextGradient';
-import { motion } from 'framer-motion';
+import React from "react";
+import {
+  Box,
+  Flex,
+  Text,
+  VStack,
+  HStack,
+  Circle,
+  useBreakpointValue,
+} from "@chakra-ui/react";
+import { motion } from "framer-motion";
+import { roadmapData, Step } from "../constants/roadmap";
+
+const MotionBox = motion(Box);
 
 const RoadmapStepper: React.FC = () => {
-    return (
-        <Box color="white" py={10} px={4}>
-            <Flex direction="column" align="center" w="full" maxW="1200px" mx="auto">
-                <PhaseSection phase={roadmapData} />
-            </Flex>
-        </Box>
-    );
-};
+  const isMobile = useBreakpointValue({ base: true, md: false });
 
-interface PhaseSectionProps {
-    phase: Phase;
-}
+  return (
+    <Box
+      color="white"
+      py={{ base: 12, md: 20 }}
+      px={{ base: 4, md: 12 }}
+      position="relative"
+      overflowX="hidden" // ✅ Prevent layout overflow
+    >
+      <Text
+        textAlign="center"
+        fontSize={{ base: "3xl", md: "5xl" }}
+        fontWeight="bold"
+        mb={{ base: 10, md: 14 }}
+      >
+        Our Roadmap
+      </Text>
 
-const PhaseSection: React.FC<PhaseSectionProps> = ({ phase }) => {
-    return (
-        <>
-            <Flex direction="column" w="full" position="relative" align="center">
-                <Text className='mb-16' fontSize={{ base: "4xl", lg: "6xl" }} fontWeight="bold">ROADMAP</Text>
-                {phase.steps.map((step, stepIndex) => (
-                    <motion.div
-                        key={stepIndex}
-                        initial={{ opacity: 0, y: 50 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.8, ease: 'easeInOut', delay: stepIndex * 0.2 }}
-                        viewport={{ once: false, amount: 0.8 }}
-                        className="w-full"
-                    >
-                        <Flex
-                            key={stepIndex}
-                            direction={{ base: "column", md: "row" }}
-                            align={{ base: "center", md: "start" }}
-                            position="relative"
-                            zIndex={1}
-                            px={{ base: 4, md: 8 }}
-                            py={{ base: 10, md: 0 }}
-                            w="full"
-                            justify="start"
-                            maxW="1200px"
-                            gap={4}
-                        >
-                            <StepperIndicator step={stepIndex + 1} />
-                            <StepperStep step={step} />
-                        </Flex>
-                    </motion.div>
-                ))}
-            </Flex>
-        </>
-    );
-};
-
-interface StepperStepProps {
-    step: Step;
-}
-
-const StepperStep: React.FC<StepperStepProps> = ({ step }) => {
-    var isFeaturesEmpty = step.features.length == 0;
-    return (
+      {/* Center vertical line on desktop */}
+      {!isMobile && (
         <Box
-            flex={{ base: 1, md: 1 }}
-            ml={{ base: 0, md: 8 }}
-            textAlign={{ base: "center", md: "left" }}
-            maxW="600px"
-        >
-            <Text fontSize="2xl" fontWeight="bold">{step.title}</Text>
-            {/* <Text className='text-gray-500' fontSize="md" mt={2}><strong>Purpose:</strong> {step.purpose}</Text> */}
-            {step.features && step.features.length > 0 && (
-                <>
-                    {/* <Text fontSize="md" mt={2}><strong>Features:</strong></Text> */}
-                    <Box pl={4} mt={1}>
-                        {step.features.map((feature, index) => (
-                            <Text className='text-gray-500' key={index} fontSize="md">• {feature.description}</Text>
-                        ))}
-                    </Box>
-                </>
-            )}
+          position="absolute"
+          top="180px"
+          bottom="0"
+          left="50%"
+          w="2px"
+          bgGradient="linear(to-b, #00FF7F, #008F5F)"
+          transform="translateX(-50%)"
+          zIndex={0}
+        />
+      )}
 
-        </Box>
-    );
-};
+      {roadmapData.steps.map((step: Step, idx: number) => {
+        const isLeft = idx % 2 === 0;
 
-interface StepperIndicatorProps {
-    step: number;
-}
-
-const StepperIndicator: React.FC<StepperIndicatorProps> = ({ step }) => {
-    const stepItem = roadmapData.steps[step - 1];
-    const isActive = stepItem.active;
-    const subtitle = stepItem.subtitle;
-    const isMobile = useBreakpointValue({ base: true, md: false });
-
-    return (
-        <Flex className={`relative ${isActive ? "left-0" : ""}`} direction="row" align="center" minW={{ base: "100%", md: "200px" }} display={{ base: 'none', md: 'flex' }}>
-            <Flex direction="column" align="center" mr={6}>
-                <Box textAlign="right" mb={8} w="165px">
-                    {isActive ? (
-                        <>
-                            <TextGradient fontSize="xl" fontWeight="bold" gradient="linear(to-r, #59D279, #91FFAE)">
-                                {`Phase ${step}`}
-                            </TextGradient>
-                            {/* <Text fontSize="xl">{subtitle}</Text> */}
-                        </>
-                    ) : (
-                        <Box w="165px" />
-                    )}
-                </Box>
-            </Flex>
-
-            <Flex direction="column" align="center" ml={{ md: isActive ? 1 : 0, xs: isActive ? 1 : 0 }}>
+        return (
+          <Box
+            key={idx}
+            w="full"
+            mb={{ base: 10, md: 16 }}
+            pl={isMobile ? 0 : isLeft ? 0 : "50%"}
+            pr={isMobile ? 0 : isLeft ? "50%" : 0}
+            overflow="hidden" // ✅ Contain animated box
+          >
+            <MotionBox
+              initial={{ opacity: 0, x: isMobile ? 0 : isLeft ? -100 : 100 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, ease: "easeOut", delay: idx * 0.2 }}
+              viewport={{ once: false, amount: 0.5 }}
+            >
+              <Flex
+                align="flex-start"
+                justify={
+                  isMobile ? "center" : isLeft ? "flex-end" : "flex-start"
+                }
+              >
                 <Box
-                    w="28px"
-                    h="28px"
-                    borderRadius="lg"
-                    bg={isActive ? `linear-gradient(to right, #59D279, #91FFAE)` : `gray`}
-                    display="flex"
-                    alignItems="center"
-                    justifyContent="center"
-                    zIndex={2}
+                  bg={step.active ? "#329e52" : "#262626"}
+                  p={{ base: 5, md: 6 }}
+                  borderRadius="2xl"
+                  boxShadow="lg"
+                  maxW="400px"
+                  textAlign="left"
+                  transition="transform 0.2s ease"
+                  transform={
+                    isMobile
+                      ? "none"
+                      : isLeft
+                      ? "translateX(-12px)"
+                      : "translateX(12px)"
+                  }
+                  _hover={{
+                    transform: "scale(1.025)",
+                  }}
                 >
-                    <Text fontSize="sm" fontWeight="bold" color="white">{step}</Text>
+                  <HStack mb={4} spacing={4} align="center">
+                    <Circle
+                      size="10"
+                      bg={step.active ? "#295b38" : "gray.700"}
+                      borderWidth="2px"
+                      borderColor={step.active ? "#78ffa1" : "#555"}
+                      color={step.active ? "#78ffa1" : "#aaa"}
+                      fontSize="sm"
+                      fontWeight="bold"
+                    >
+                      {idx + 1}
+                    </Circle>
+                    <Text
+                      fontSize={{ base: "lg", md: "2xl" }}
+                      fontWeight="bold"
+                    >
+                      {step.title}
+                    </Text>
+                  </HStack>
+                  <VStack align="start" spacing={2} pl={6}>
+                    {step.features.map((feature, i) => (
+                      <Text key={i} fontSize="sm" lineHeight="tall">
+                        – {feature.description.trim()}
+                      </Text>
+                    ))}
+                  </VStack>
                 </Box>
-                <Box
-                    w="5px"
-                    h="300px"
-                    bg={step == roadmapData.steps.length ? '' : isActive ? `linear-gradient(to right, #59D279, #91FFAE)` : `gray`}
-                />
-            </Flex>
-        </Flex>
-    );
+              </Flex>
+            </MotionBox>
+          </Box>
+        );
+      })}
+    </Box>
+  );
 };
 
 export default RoadmapStepper;

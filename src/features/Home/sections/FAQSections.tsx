@@ -1,100 +1,98 @@
 import React from "react";
-import { Box, Flex, Text, useDisclosure, Collapse } from "@chakra-ui/react";
-import { RightOutlined, DownOutlined } from "@ant-design/icons";
+import {
+  Box,
+  Accordion,
+  AccordionItem,
+  AccordionButton,
+  AccordionPanel,
+  AccordionIcon,
+  Text,
+  Heading,
+  useBreakpointValue,
+} from "@chakra-ui/react";
 import { motion } from "framer-motion";
 
 const faqDatas = [
   {
-    question: "What is Solvra?",
+    question: "What is Javeline?",
     answer:
-      "Solvra is a browser-based integrated development environment (IDE) built for Solana developers.",
+      "Javeline is a browser-based integrated development environment (IDE) built for Solana developers.",
   },
   {
-    question: "Who can use Solvra?",
+    question: "Who can use Javeline?",
     answer:
-      "Anyone! Solvra is designed for both beginners and experienced developers. Whether you're experimenting or shipping production-grade contracts, Solvra is your go-to platform.",
+      "Anyone! Javeline is designed for both beginners and experienced developers, supporting everything from quick experiments to production-grade contract deployments.",
   },
   {
-    question: "Is Solvra optimized for Solana development?",
+    question: "Is Javeline optimized for Solana development?",
     answer:
-      "Yes! Solvra is tailor-made for Solana smart contracts, giving you direct access to the tools, libraries, and workflows that fit the Solana ecosystem.",
+      "Absolutely. Javeline provides native tools, libraries, and workflows tailored specifically to the Solana ecosystem for streamlined smart contract development.",
   },
   {
-    question: "Is my code and data secure on Solvra?",
+    question: "Is my code and data secure on Javeline?",
     answer:
-      "We take security seriously. Solvra uses encrypted communication and secure cloud storage practices. We’ll also offer self-hosted options for teams needing full control.",
+      "Security is a top priority: we use end-to-end encryption in transit, secure cloud storage, and offer self-hosted deployment options for enterprise needs.",
   },
 ];
 
-interface FAQItemProps {
-  question: string;
-  answer: string;
-}
+const MotionBox = motion(Box);
 
-const FAQItem: React.FC<FAQItemProps> = ({ question, answer }) => {
-  const { isOpen, onToggle } = useDisclosure();
+const FAQSection: React.FC = () => {
+  const columns = useBreakpointValue({ base: 1, md: 2 });
 
   return (
-    <Box
-      mb={8}
-      borderRadius="xl"
-      bgGradient="linear(to-r, #59D279, #91FFAE)"
-      p="1px"
-    >
-      <Box
-        bg="black"
-        p={4}
-        borderRadius="xl"
-        _hover={{
-          boxShadow:
-            "0 0 20px 5px rgba(89, 210, 121, 0.5), 0 0 20px 5px rgba(145, 255, 174, 0.5)",
-          transition: "box-shadow 0.3s ease-in-out",
-        }}
-      >
-        <Flex
-          align="center"
-          justify="space-between"
-          onClick={onToggle}
-          cursor="pointer"
-        >
-          <Text color="white">{question}</Text>
-          <Box as="span" color="white">
-            {isOpen ? <DownOutlined /> : <RightOutlined />}
-          </Box>
-        </Flex>
-        <Collapse in={isOpen} animateOpacity>
-          <Box mt={4} pl={8} color="whiteAlpha.800">
-            {answer}
-          </Box>
-        </Collapse>
-      </Box>
-    </Box>
-  );
-};
-
-const FAQSection = () => {
-  return (
-    <Box py={10}>
-      <Text
-        fontSize={{ base: "4xl", lg: "6xl" }}
-        fontWeight="bold"
+    <Box py={{ base: 12, md: 24 }} px={{ base: 6, md: 16 }}>
+      <Heading
+        as="h2"
+        size={useBreakpointValue({ base: "2xl", md: "4xl" })}
         textAlign="center"
         mb={8}
-        color="white"
       >
-        FAQ
-      </Text>
-      <Box maxW="800px" w={{ lg: "1000px" }} mx="auto" px={4}>
-        {faqDatas.map((faq, index) => (
-          <motion.div
-            key={index}
-            initial={{ opacity: 0, y: 50 }}
+        Common Questions
+      </Heading>
+
+      <Box
+        display="grid"
+        gridTemplateColumns={`repeat(${columns}, 1fr)`}
+        gap={{ base: 4, md: 8 }}
+      >
+        {faqDatas.map((faq, idx) => (
+          <MotionBox
+            key={idx}
+            initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, ease: "easeInOut", delay: index * 0.15 }} // Smoother animation
-            viewport={{ once: false, amount: 0.8 }}
+            transition={{ duration: 0.4, delay: idx * 0.1 }}
+            viewport={{ once: false }}
+            bg="#474747"
+            borderRadius="lg"
+            boxShadow="lg"
+            overflow="hidden"
           >
-            <FAQItem question={faq.question} answer={faq.answer} />
-          </motion.div>
+            <Accordion allowToggle>
+              <AccordionItem border="none">
+                <AccordionButton
+                  _expanded={{ bg: "#008F5F", color: "white" }}
+                  _hover={{ bg: "#004F2F", color: "white" }}
+                  px={4}
+                  py={3}
+                >
+                  <Text flex="1" textAlign="left" fontWeight="semibold">
+                    {faq.question}
+                  </Text>
+                  <AccordionIcon />
+                </AccordionButton>
+                <AccordionPanel
+                  bg="#474747"
+                  color="gray.200"
+                  px={4}
+                  py={3}
+                  fontSize="sm"
+                >
+                  {faq.answer}
+                </AccordionPanel>
+              </AccordionItem>
+            </Accordion>
+          </MotionBox>
         ))}
       </Box>
     </Box>

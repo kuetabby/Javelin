@@ -1,9 +1,8 @@
 "use client";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import {
-  Button,
   Flex,
   IconButton,
   useDisclosure,
@@ -11,8 +10,6 @@ import {
 } from "@chakra-ui/react";
 import { MenuOutlined, CloseOutlined } from "@ant-design/icons";
 import clsx from "clsx";
-
-import powerLinkLogo from "@/assets/PowerLink-Logo.png";
 import { kanitBold } from "@/utils/font";
 import { socialsLink } from "@/constants/links";
 import { TwitterIcon, TeleIcon } from "@/utils/Icon/socials";
@@ -24,21 +21,31 @@ const Navbar = () => {
   const { isOpen, onToggle, onClose } = useDisclosure();
   const [isDesktop] = useMediaQuery("(min-width: 1024px)");
 
-  /* auto-close drawer kalau layar dibesar-kecilkan */
+  // Scroll state
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  // Detect scroll
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 10); // ubah nilai kalau perlu
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  // Auto-close drawer on resize
   useEffect(() => {
     if (isDesktop && isOpen) onClose();
   }, [isDesktop]);
 
-  /* navbar lurus, lalu jadi glassy saat scroll */
-  const scrolled =
-    typeof window !== "undefined" && window.scrollY > 160 ? "nav-glass" : "";
-
   return (
     <header
       className={clsx(
-        "fixed inset-x-0 z-50 transition-all",
-        scrolled,
-        kanitBold.className
+        "fixed inset-x-0 z-50 transition-all duration-300",
+        kanitBold.className,
+        isScrolled
+          ? "backdrop-blur-md bg-black/60 border-b border-white/10 shadow-sm"
+          : "bg-transparent"
       )}
     >
       <Flex
@@ -49,20 +56,23 @@ const Navbar = () => {
         align="center"
         justify="space-between"
       >
-        {/* brand */}
-        <Link href="/">
+        {/* Brand */}
+        <Link href="/" className="flex items-center">
           <Image
             src={SolnityLogo}
-            alt="Grownetic"
+            alt="Javeline AI Logo"
             priority
             className="h-16 w-auto"
           />
+          <span className="ml-1 text-white text-xl font-semibold">
+            Javeline AI
+          </span>
         </Link>
 
-        {/* nav links – desktop */}
+        {/* Navigation – Desktop */}
         <PageTabs containterClass="hidden lg:flex" />
 
-        {/* CTA + socials – desktop */}
+        {/* Socials – Desktop */}
         <Flex className="hidden lg:flex" align="center" gap={4}>
           <Link href={socialsLink.twitter} target="_blank">
             <TwitterIcon className="fill-white hover:fill-primary" />
@@ -72,24 +82,23 @@ const Navbar = () => {
           </Link>
         </Flex>
 
-        {/* hamburger – mobile */}
+        {/* Hamburger – Mobile */}
         <IconButton
           aria-label="Menu"
           onClick={onToggle}
           className="lg:hidden"
           icon={
             isOpen ? (
-              <CloseOutlined className="text-xl" />
+              <CloseOutlined className="text-xl text-white" />
             ) : (
-              <MenuOutlined className="text-xl" />
+              <MenuOutlined className="text-xl text-white" />
             )
           }
           variant="ghost"
-          color="white"
         />
       </Flex>
 
-      {/* drawer untuk mobile */}
+      {/* Drawer – Mobile */}
       <NavbarDrawer isOpen={isOpen} onClose={onClose} />
     </header>
   );

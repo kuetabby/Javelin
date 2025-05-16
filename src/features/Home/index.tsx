@@ -1,5 +1,6 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
+import { FaCoins, FaNetworkWired, FaHashtag, FaDatabase } from "react-icons/fa";
 
 import YinLoader from "@/components/Loader/Custom";
 
@@ -9,10 +10,6 @@ import bgHero from "@/assets/hero-bg.png";
 import { contractAddress, findUsLink, socialsLink } from "@/constants/links";
 import { kanit, kanitBold } from "@/utils/font";
 import { features } from "./constants/features";
-import BackgroundWaveRoadMap from "@/assets/wave_2.png";
-import BackgroundWaveRoadMap1 from "@/assets/wave_1.png";
-import PowerLinkLogo from "@/assets/PowerLink-Logo.png";
-import PowerLinkText from "@/assets/PowerLink-text.png";
 import { motion } from "framer-motion";
 import bgArch from "@/assets/background_2.png";
 import bgGlow from "@/assets/background_3.png";
@@ -39,7 +36,8 @@ import Chip from "@/components/Chip";
 import AboutImage3 from "@/assets/about-3-powerlink.png";
 import { investments } from "./constants/investments";
 import TextGradient from "@/components/Text/TextGradient";
-import { CopyOutlined } from "@ant-design/icons";
+
+import { CopyOutlined, FileTextOutlined } from "@ant-design/icons";
 import FAQSection from "./sections/FAQSections";
 import RoadmapStepper from "./sections/RoadmapSections";
 import { Image } from "@chakra-ui/next-js";
@@ -130,24 +128,6 @@ const cardsData = [
   },
 ];
 
-const items = [
-  {
-    title: "Scales With Your Ambition",
-    desc: "From solo founders to enterprise giants—our system grows with you.",
-    img: "/img/scale-ambition.png",
-  },
-  {
-    title: "No Tech Overwhelm",
-    desc: "Simple onboarding, intuitive dashboard, and zero-code setup.",
-    img: "/img/no-tech.png",
-  },
-  {
-    title: "Future-Proof Technology",
-    desc: "Our AI stays ahead—so you don’t have to play catch-up.",
-    img: "/img/future-proof.png",
-  },
-];
-
 const Home: React.FC<Props> = () => {
   const [isLoaded, setIsLoaded] = useState(false);
   const isMounted = useIsMounted();
@@ -198,6 +178,19 @@ const Home: React.FC<Props> = () => {
             <MotionBox
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.75, ease: "easeInOut", delay: 0.2 }}
+              viewport={{ once: false, amount: 0.6 }}
+              className={clsx(
+                "mt-6 max-w-[650px] text-sm sm:text-base text-[#CBCBCB] uppercase",
+                kanit.className
+              )}
+            >
+              BUILT. LAUNCH. FAST
+            </MotionBox>
+
+            <MotionBox
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.75, ease: "easeInOut" }}
               viewport={{ once: false, amount: 0.6 }}
               className={clsx(
@@ -243,7 +236,7 @@ const Home: React.FC<Props> = () => {
                 _hover={{ bg: "#5FFF8F" }}
                 color="black"
               >
-                $JAVELIN
+                $JAVAI
               </Button>
 
               <Button
@@ -260,7 +253,7 @@ const Home: React.FC<Props> = () => {
                 _hover={{ bg: "whiteAlpha.200" }}
                 color="white"
               >
-                DOCUMENTATION
+                GET STARTED
               </Button>
             </motion.div>
 
@@ -271,17 +264,14 @@ const Home: React.FC<Props> = () => {
               animate={{ scale: [0, 1.2, 1] }}
               transition={{ duration: 1.5, ease: "easeInOut" }}
             >
-              <button className="rounded-full p-5 bg-[#78FFA119] ring-1 ring-[#78FFA1]">
-                <svg
-                  width="18"
-                  height="22"
-                  viewBox="0 0 14 18"
-                  fill="#78FFA1"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path d="M13.5 9L0 17.6603L0 0.339746L13.5 9Z" />
-                </svg>
-              </button>
+              <a
+                href={socialsLink.whitepaper}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center rounded-full p-5 bg-[#78FFA119] ring-1 ring-[#78FFA1] hover:bg-[#78FFA126] transition-colors duration-200"
+              >
+                <FileTextOutlined className="text-[#78FFA1]" />
+              </a>
             </motion.div>
           </Flex>
 
@@ -405,24 +395,24 @@ const Home: React.FC<Props> = () => {
         <section className="relative isolate overflow-hidden py-28 lg:py-36 px-5 lg:px-8 text-white">
           <div className="mx-auto w-full max-w-[1240px]">
             <div className="grid lg:grid-cols-2 gap-12 mb-20">
-              <div>
+              <div className="text-center lg:text-left">
                 <span className="inline-block text-xs px-4 py-1.5 border border-green-400 rounded-full text-green-400 uppercase tracking-wider mb-4">
-                  Why $JAVELIN
+                  Why $JAVAI
                 </span>
-                <p className="text-sm text-gray-300 max-w-sm mb-6">
+                <p className="text-sm text-gray-300 max-w-sm mb-6 mx-auto lg:mx-0">
                   Why settle for rigid tools when you can grow with AI that
                   evolves?
                 </p>
               </div>
 
-              <div className="flex items-start justify-between flex-col sm:flex-row sm:items-center sm:justify-end">
-                <h2 className="text-3xl md:text-5xl font-bold text-white mb-4 sm:mb-0 sm:text-right">
+              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-end text-center sm:text-right">
+                <h2 className="text-3xl md:text-5xl font-bold text-white mb-4 sm:mb-0 w-full sm:w-auto">
                   Smarter Systems,
                   <br /> Limitless Growth
                 </h2>
                 <Link
                   href="#"
-                  className="text-[#78FFA1] text-sm font-medium inline-flex items-center gap-1 hover:text-white mt-4 sm:mt-0 sm:ml-6"
+                  className="text-[#78FFA1] text-sm font-medium inline-flex items-center justify-center gap-1 hover:text-white mt-4 sm:mt-0 sm:ml-6"
                 >
                   More Benefit
                   <svg
@@ -443,35 +433,68 @@ const Home: React.FC<Props> = () => {
                 </Link>
               </div>
             </div>
+            <div id="tokenomics" className="h-[1em] lg:h-[8em] relative z-30" />
+            <section className="relative isolate overflow-hidden py-24 px-6 lg:px-20 text-white bg-black rounded-none lg:rounded-[40px]">
+              {/* Background Glow */}
+              <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+                <div className="absolute top-1/2 left-1/2 w-[600px] h-[600px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#59D27933] blur-[120px]" />
+              </div>
 
-            {/* Cards */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              {items.map((item, i) => (
-                <motion.div
-                  key={item.title}
-                  variants={card}
-                  initial="hidden"
-                  whileInView="show"
-                  viewport={{ once: false, amount: 0.4 }}
-                  custom={i}
-                  className="flex flex-col justify-between bg-[#0A0A0A] border border-[#3DFF91]/10 rounded-[20px] p-6 hover:shadow-[0_0_32px_#78FFA122] transition duration-300"
-                >
-                  <div>
-                    <h3 className="text-lg font-semibold mb-4">{item.title}</h3>
-                    <div className="w-full h-[160px] overflow-hidden rounded-[12px] bg-gray-800 mb-4">
-                      <Image
-                        src={item.img}
-                        alt={item.title}
-                        width={400}
-                        height={240}
-                        className="object-cover w-full h-full rounded-[12px]"
-                      />
+              <div className="relative z-10 max-w-[1240px] mx-auto">
+                {/* Heading */}
+                <div className="text-center mb-16">
+                  <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">
+                    Our Tokenomics
+                  </h2>
+                  <p className="text-gray-400 max-w-md mx-auto text-sm md:text-base">
+                    Designed for long-term growth and sustainability
+                  </p>
+                </div>
+
+                {/* Token Info */}
+                <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 text-center">
+                  {[
+                    {
+                      icon: (
+                        <FaHashtag className="text-[#59D279] w-8 h-8 mb-2" />
+                      ),
+                      label: "Ticker",
+                      value: "JAVAI",
+                    },
+                    {
+                      icon: <FaCoins className="text-[#59D279] w-8 h-8 mb-2" />,
+                      label: "Token Name",
+                      value: "Java AI Token",
+                    },
+                    {
+                      icon: (
+                        <FaDatabase className="text-[#59D279] w-8 h-8 mb-2" />
+                      ),
+                      label: "Total Supply",
+                      value: "1,000,000,000",
+                    },
+                    {
+                      icon: (
+                        <FaNetworkWired className="text-[#59D279] w-8 h-8 mb-2" />
+                      ),
+                      label: "Network",
+                      value: "Solana",
+                    },
+                  ].map((item, i) => (
+                    <div
+                      key={i}
+                      className="flex flex-col items-center p-6 rounded-xl bg-[#141414] border border-[#59D27922] shadow-[0_0_24px_#59D27933] hover:shadow-[0_0_48px_#59D27966] transition duration-300"
+                    >
+                      {item.icon}
+                      <p className="text-sm text-gray-400">{item.label}</p>
+                      <span className="font-bold text-lg text-white">
+                        {item.value}
+                      </span>
                     </div>
-                    <p className="text-sm text-gray-400">{item.desc}</p>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
+                  ))}
+                </div>
+              </div>
+            </section>
           </div>
         </section>
 
@@ -567,9 +590,9 @@ const Home: React.FC<Props> = () => {
                   color="gray.300"
                   maxW={{ base: "full", md: "md" }}
                 >
-                  Solvra is redefining how you build on Solana. Create, test,
-                  and launch smart contracts — all from the convenience of your
-                  browser.
+                  Javeline AI is redefining how you build on Solana. Create,
+                  test, and launch smart contracts — all from the convenience of
+                  your browser.
                 </Text>
                 <Button
                   as="a"
@@ -782,12 +805,6 @@ const Home: React.FC<Props> = () => {
         <div id="roadmap" className="h-[1em] lg:h-[5em] relative z-30" />
 
         <Box color="white" position="relative">
-          {/* <Image
-            src={BackgroundWaveRoadMap}
-            alt="roadmap"
-            priority
-            className="w-full h-full absolute top-0 left-0 bg-cover bg-center bg-no-repeat"
-          /> */}
           <RoadmapStepper />
         </Box>
 

@@ -11,7 +11,7 @@ export const investments = [
   },
   {
     title: "All-in-One Workspace",
-    desc: "Whether you're experimenting or building production-grade dApps, Solvra adapts to your needs.",
+    desc: "Whether you're experimenting or building production-grade dApps, Javeline AI adapts to your needs.",
     img: Feature2,
   },
   {

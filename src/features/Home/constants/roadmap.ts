@@ -61,7 +61,7 @@ export const roadmapData: Phase = {
         },
         {
           description:
-            "Initial SolvraIDE Release: Highlight Solvra’s key features and consider a public demo to showcase capabilities.",
+            "Initial Javeline AI Release: Highlight Javeline’s key features and consider a public demo to showcase capabilities.",
         },
       ],
       active: true,

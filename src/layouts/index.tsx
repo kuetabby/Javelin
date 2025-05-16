@@ -15,7 +15,7 @@ import { useIsMounted } from "@/hooks/useIsMounted";
 
 import "./style.css";
 
-interface Props extends PropsWithChildren { }
+interface Props extends PropsWithChildren {}
 
 const BaseLayout: React.FC<Props> = ({ children }) => {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -32,9 +32,7 @@ const BaseLayout: React.FC<Props> = ({ children }) => {
 
   return (
     <Provider>
-      {isMounted && isLoaded && (
-        <Navbar />
-      )}
+      {isMounted && isLoaded && <Navbar />}
       <main className={clsx("base-main-container", kanit.className)}>
         {/* {isMounted && (
           <Image
@@ -46,10 +44,7 @@ const BaseLayout: React.FC<Props> = ({ children }) => {
         )} */}
         {children}
       </main>
-      {isMounted && isLoaded && (
-        <Footer />
-      )}
-
+      {isMounted && isLoaded && <Footer />}
     </Provider>
   );
 };

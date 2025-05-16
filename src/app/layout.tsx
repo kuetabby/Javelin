@@ -7,9 +7,9 @@ import BaseLayout from "@/layouts";
 
 import "./globals.css";
 
-const app_title = "JavelinAI";
-const app_name = "JavelinAI";
-const description = "-";
+const app_title = "Javeline AI";
+const app_name = "Javeline AI";
+const description = "Build smarter on Solana";
 
 export const metadata: Metadata = {
   title: app_title,

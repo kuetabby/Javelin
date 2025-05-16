@@ -3,9 +3,9 @@ export const pairAddress = "-";
 
 export const socialsLink = {
   // whitepaper: "/",
-  whitepaper: "https://docs.solvraide.com/",
-  twitter: "https://x.com/SolvraIDE",
-  telegram: "https://t.me/SolvraIDE",
+  whitepaper: "/",
+  twitter: "/",
+  telegram: "/",
   medium: "https://medium.com",
   email: "mailto:",
   bot: "https://t.me/",

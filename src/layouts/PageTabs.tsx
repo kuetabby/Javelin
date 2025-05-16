@@ -28,20 +28,15 @@ const PageTabs: React.FC<Props> = ({ containterClass }) => {
   const tabsList = useMemo(() => {
     return [
       {
-        href: "/",
-        pathname: `/`,
-        name: "Home",
-      },
-      {
         href: "#about",
         pathname: `#about`,
         name: "About",
       },
-      // {
-      //   href: "#tokenomics",
-      //   pathname: `#tokenomics`,
-      //   name: "Tokenomics",
-      // },
+      {
+        href: "#tokenomics",
+        pathname: `#tokenomics`,
+        name: "Tokenomics",
+      },
       {
         href: "#roadmap",
         pathname: `#roadmap`,
