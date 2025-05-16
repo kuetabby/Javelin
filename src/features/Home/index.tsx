@@ -37,7 +37,11 @@ import AboutImage3 from "@/assets/about-3-powerlink.png";
 import { investments } from "./constants/investments";
 import TextGradient from "@/components/Text/TextGradient";
 
-import { CopyOutlined, FileTextOutlined } from "@ant-design/icons";
+import {
+  ArrowRightOutlined,
+  CopyOutlined,
+  FileTextOutlined,
+} from "@ant-design/icons";
 import FAQSection from "./sections/FAQSections";
 import RoadmapStepper from "./sections/RoadmapSections";
 import { Image } from "@chakra-ui/next-js";
@@ -119,7 +123,7 @@ const cardsData = [
   {
     id: 2,
     title: "Plug Into Your Workflow",
-    desc: "Connect your tools and data sources effortlessly—no coding needed.",
+    desc: "Connect your tools and data sources effortlessly with no coding needed.",
     hasPlaceholderIcon: true,
     customIcons: [
       { type: "tilde", id: "how-tilde-icon" },
@@ -213,8 +217,8 @@ const Home: React.FC<Props> = () => {
                 kanit.className
               )}
             >
-              Whether you’re a startup or enterprise, our AI grows with
-              you—offering scalable automation and optimization tools.
+              Whether you’re a startup or an enterprise, our AI grows with you,
+              offering scalable automation and optimization tools.
             </MotionBox>
 
             <motion.div
@@ -227,18 +231,6 @@ const Home: React.FC<Props> = () => {
                 ease: [0.42, 0, 0.58, 1],
               }}
             >
-              <Button
-                rounded="full"
-                px={8}
-                py={6}
-                size="lg"
-                bg="#78FFA1"
-                _hover={{ bg: "#5FFF8F" }}
-                color="black"
-              >
-                $JAVAI
-              </Button>
-
               <Button
                 as="a"
                 href={socialsLink.whitepaper}
@@ -253,7 +245,22 @@ const Home: React.FC<Props> = () => {
                 _hover={{ bg: "whiteAlpha.200" }}
                 color="white"
               >
-                GET STARTED
+                Build AI <ArrowRightOutlined style={{ marginLeft: "0.5em" }} />
+              </Button>
+
+              <Button
+                rounded="full"
+                px={8}
+                py={6}
+                size="lg"
+                // bg="#78FFA1"
+                _hover={{ bg: "#5FFF8F" }}
+                color="white"
+                variant="outline"
+                borderColor="#78FFA1"
+              >
+                Buy $JAVELIN{" "}
+                <ArrowRightOutlined style={{ marginLeft: "0.5em" }} />
               </Button>
             </motion.div>
 
@@ -280,6 +287,7 @@ const Home: React.FC<Props> = () => {
           </div>
         </section>
 
+        <div id="features" />
         <section className="relative isolate overflow-hidden py-28 lg:py-40 lg:pt-56 lg:pb-44">
           {/* glowing arch background */}
           <Image
@@ -327,7 +335,7 @@ const Home: React.FC<Props> = () => {
               fontSize="sm"
               lineHeight="1.6"
             >
-              Our AI features are designed for scalability—smart today, smarter
+              Our AI features are designed for scalability: smart today, smarter
               tomorrow.
             </Text>
           </VStack>
@@ -397,7 +405,7 @@ const Home: React.FC<Props> = () => {
             <div className="grid lg:grid-cols-2 gap-12 mb-20">
               <div className="text-center lg:text-left">
                 <span className="inline-block text-xs px-4 py-1.5 border border-green-400 rounded-full text-green-400 uppercase tracking-wider mb-4">
-                  Why $JAVAI
+                  Why $JAVELIN
                 </span>
                 <p className="text-sm text-gray-300 max-w-sm mb-6 mx-auto lg:mx-0">
                   Why settle for rigid tools when you can grow with AI that
@@ -433,15 +441,13 @@ const Home: React.FC<Props> = () => {
                 </Link>
               </div>
             </div>
-            <div id="tokenomics" className="h-[1em] lg:h-[8em] relative z-30" />
+            {/* <div id="tokenomics" className="h-[1em] lg:h-[8em] relative z-30" />
             <section className="relative isolate overflow-hidden py-24 px-6 lg:px-20 text-white bg-black rounded-none lg:rounded-[40px]">
-              {/* Background Glow */}
               <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
                 <div className="absolute top-1/2 left-1/2 w-[600px] h-[600px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#59D27933] blur-[120px]" />
               </div>
 
               <div className="relative z-10 max-w-[1240px] mx-auto">
-                {/* Heading */}
                 <div className="text-center mb-16">
                   <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">
                     Our Tokenomics
@@ -451,7 +457,6 @@ const Home: React.FC<Props> = () => {
                   </p>
                 </div>
 
-                {/* Token Info */}
                 <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 text-center">
                   {[
                     {
@@ -494,12 +499,11 @@ const Home: React.FC<Props> = () => {
                   ))}
                 </div>
               </div>
-            </section>
+            </section> */}
           </div>
         </section>
 
-        <div id="about" className="h-[1em] lg:h-[5em] relative z-30" />
-
+        <div id="how-it-works" />
         <Box
           as="section"
           id="how"
@@ -507,7 +511,7 @@ const Home: React.FC<Props> = () => {
           isolation="isolate"
           overflow="hidden" // Penting untuk memotong glow yang meluap keluar section
           minH={{ base: "auto", lg: "960px" }}
-          py={{ base: 24, lg: 0 }}
+          py={{ base: 16, lg: 0 }}
           display="flex"
           alignItems="center"
         >
@@ -572,7 +576,7 @@ const Home: React.FC<Props> = () => {
                   letterSpacing="wider"
                   fontWeight="medium"
                 >
-                  How it work
+                  How it works
                 </Text>
                 <Text
                   as="h2"
@@ -590,9 +594,7 @@ const Home: React.FC<Props> = () => {
                   color="gray.300"
                   maxW={{ base: "full", md: "md" }}
                 >
-                  Javeline AI is redefining how you build on Solana. Create,
-                  test, and launch smart contracts — all from the convenience of
-                  your browser.
+                  -
                 </Text>
                 <Button
                   as="a"
@@ -808,7 +810,7 @@ const Home: React.FC<Props> = () => {
           <RoadmapStepper />
         </Box>
 
-        <div id="faq" className="h-[1em] lg:h-[5em] relative z-30" />
+        {/* <div id="faq" className="h-[1em] lg:h-[5em] relative z-30" />
 
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -837,7 +839,7 @@ const Home: React.FC<Props> = () => {
           >
             <FAQSection />
           </Flex>
-        </motion.div>
+        </motion.div> */}
 
         <section
           id="scale"

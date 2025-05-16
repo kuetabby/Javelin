@@ -51,18 +51,18 @@ export const roadmapData: Phase = {
       subtitle: "/",
       purpose: "/",
       features: [
-        {
-          description:
-            "Token Launch on -: Define the token utility, tokenomics, and launch strategy to attract investors and establish a strong project foundation.        ",
-        },
-        {
-          description:
-            "Market Awareness Campaign: Launch marketing efforts to create awareness and attract early adopters.",
-        },
-        {
-          description:
-            "Initial Javeline AI Release: Highlight Javeline’s key features and consider a public demo to showcase capabilities.",
-        },
+        // {
+        //   description:
+        //     "Token Launch on -: Define the token utility, tokenomics, and launch strategy to attract investors and establish a strong project foundation.        ",
+        // },
+        // {
+        //   description:
+        //     "Market Awareness Campaign: Launch marketing efforts to create awareness and attract early adopters.",
+        // },
+        // {
+        //   description:
+        //     "Initial Javeline AI Release: Highlight Javeline’s key features and consider a public demo to showcase capabilities.",
+        // },
       ],
       active: true,
       released: true,
@@ -72,19 +72,19 @@ export const roadmapData: Phase = {
       subtitle: "/",
       purpose: "/",
       features: [
-        {
-          description:
-            "Foster a community through forums, social media, and events, encouraging user engagement and feedback.",
-        },
-        {
-          description: "Built-in debugger and transaction simulation",
-        },
-        {
-          description: "Collaboration mode (real-time team editing)",
-        },
-        {
-          description: "Deployment to mainnet with one-click integration",
-        },
+        // {
+        //   description:
+        //     "Foster a community through forums, social media, and events, encouraging user engagement and feedback.",
+        // },
+        // {
+        //   description: "Built-in debugger and transaction simulation",
+        // },
+        // {
+        //   description: "Collaboration mode (real-time team editing)",
+        // },
+        // {
+        //   description: "Deployment to mainnet with one-click integration",
+        // },
       ],
       active: false,
       released: true,
@@ -94,10 +94,10 @@ export const roadmapData: Phase = {
       subtitle: "To Be Announce",
       purpose: "To Be Announce",
       features: [
-        {
-          description:
-            "Exciting updates are coming soon! Stay tuned as we prepare to unveil new features and improvements to enhance your investment experience with our platform.",
-        },
+        // {
+        //   description:
+        //     "Exciting updates are coming soon! Stay tuned as we prepare to unveil new features and improvements to enhance your investment experience with our platform.",
+        // },
       ],
       active: false,
       released: false,
@@ -107,10 +107,10 @@ export const roadmapData: Phase = {
       subtitle: "To Be Announce",
       purpose: "To Be Announce",
       features: [
-        {
-          description:
-            "Our team is working diligently to bring you the latest innovations in cryptocurrency security and usability. More details will be announced shortly. Thank you for your patience and continued support.",
-        },
+        // {
+        //   description:
+        //     "Our team is working diligently to bring you the latest innovations in cryptocurrency security and usability. More details will be announced shortly. Thank you for your patience and continued support.",
+        // },
       ],
       active: false,
       released: false,

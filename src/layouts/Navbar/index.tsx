@@ -41,11 +41,12 @@ const Navbar = () => {
   return (
     <header
       className={clsx(
-        "fixed inset-x-0 z-50 transition-all duration-300",
-        kanitBold.className,
-        isScrolled
-          ? "backdrop-blur-md bg-black/60 border-b border-white/10 shadow-sm"
-          : "bg-transparent"
+        "fixed inset-x-0 z-50 transition-all duration-300 bg-black",
+        kanitBold.className
+        // isScrolled
+        //   ? "bg-black"
+        //   : // ? "backdrop-blur-md bg-black/60 border-b border-white/10 shadow-sm"
+        //     "bg-transparent"
       )}
     >
       <Flex
@@ -60,12 +61,12 @@ const Navbar = () => {
         <Link href="/" className="flex items-center">
           <Image
             src={SolnityLogo}
-            alt="Javeline AI Logo"
+            alt="JavelinAI Logo"
             priority
             className="h-16 w-auto"
           />
           <span className="ml-1 text-white text-xl font-semibold">
-            Javeline AI
+            Javelin AI
           </span>
         </Link>
 

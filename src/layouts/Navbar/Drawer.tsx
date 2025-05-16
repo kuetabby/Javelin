@@ -28,15 +28,18 @@ export const NavbarDrawer: React.FC<Props> = ({ isOpen, onClose }) => {
   const pathname = usePathname();
   const accent = useColorModeValue("#00FF7F", "#00FF7F");
   const linkColor = useColorModeValue("white", "white");
-  const hoverBg = useColorModeValue("rgba(0,255,127,0.1)", "rgba(0,255,127,0.1)");
+  const hoverBg = useColorModeValue(
+    "rgba(0,255,127,0.1)",
+    "rgba(0,255,127,0.1)"
+  );
 
   if (!isMounted) return null;
 
   const menuItems = [
-    { label: "Home", href: "/" },
-    { label: "About", href: "#about" },
+    { label: "Features", href: "#features" },
+    { label: "How It Works", href: "#how-it-works" },
     { label: "Roadmap", href: "#roadmap" },
-    { label: "FAQ", href: "#faq" },
+    { label: "Docs", href: socialsLink.whitepaper },
   ];
 
   return (
@@ -77,15 +80,32 @@ export const NavbarDrawer: React.FC<Props> = ({ isOpen, onClose }) => {
             })}
           </VStack>
 
-          <VStack align="start" spacing={3} mt={8} pt={4} borderTop="1px solid" borderColor="gray.700">
+          <VStack
+            align="start"
+            spacing={3}
+            mt={8}
+            pt={4}
+            borderTop="1px solid"
+            borderColor="gray.700"
+          >
             <Text fontSize="sm" fontWeight="semibold" color="gray.400">
               Follow us
             </Text>
             <HStack spacing={4}>
-              <ChakraLink href={socialsLink.twitter} isExternal onClick={onClose} _hover={{ color: accent }}>
+              <ChakraLink
+                href={socialsLink.twitter}
+                isExternal
+                onClick={onClose}
+                _hover={{ color: accent }}
+              >
                 <TwitterIcon />
               </ChakraLink>
-              <ChakraLink href={socialsLink.telegram} isExternal onClick={onClose} _hover={{ color: accent }}>
+              <ChakraLink
+                href={socialsLink.telegram}
+                isExternal
+                onClick={onClose}
+                _hover={{ color: accent }}
+              >
                 <TeleIcon />
               </ChakraLink>
             </HStack>

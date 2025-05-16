@@ -32,11 +32,12 @@
 
 .nav-anchor,
 .nav-anchor-active {
-  @apply text-base md:text-xl;
+  @apply text-base md:text-lg;
 }
 
 .nav-anchor {
-  @apply bg-gradient-to-r from-[#59D279] to-[#3BC6C7] bg-clip-text text-transparent
+  @apply text-gray-400
+  /* @apply bg-gradient-to-r from-[#59D279] to-[#3BC6C7] bg-clip-text text-transparent */
   /* @apply text-white hover:text-[#01FFF9]; */
   /* @apply bg-white hover:bg-lime-zest font-bold text-lg;
   background-clip: text;

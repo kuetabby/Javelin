@@ -28,24 +28,29 @@ const PageTabs: React.FC<Props> = ({ containterClass }) => {
   const tabsList = useMemo(() => {
     return [
       {
-        href: "#about",
-        pathname: `#about`,
-        name: "About",
+        href: "#features",
+        pathname: `#features`,
+        name: "Features",
       },
       {
-        href: "#tokenomics",
-        pathname: `#tokenomics`,
-        name: "Tokenomics",
+        href: "#how-it-works",
+        pathname: `#how-it-works`,
+        name: "How It Works",
       },
+      // {
+      //   href: "#tokenomics",
+      //   pathname: `#tokenomics`,
+      //   name: "Tokenomics",
+      // },
       {
         href: "#roadmap",
         pathname: `#roadmap`,
         name: "Roadmap",
       },
       {
-        href: "#faq",
-        pathname: `#faq`,
-        name: "FAQ",
+        href: socialsLink.whitepaper,
+        pathname: socialsLink.whitepaper,
+        name: "Docs",
       },
       // {
       //   href: socialsLink.twitter,
@@ -68,18 +73,19 @@ const PageTabs: React.FC<Props> = ({ containterClass }) => {
       )}
     >
       {tabsList.map((item) => {
-        const isActive = !!defaultHash
-          ? hashname === item.pathname
-          : !defaultHash && pathname === item.pathname;
+        // const isActive = !!defaultHash
+        //   ? hashname === item.pathname
+        //   : !defaultHash && pathname === item.pathname;
 
         return (
           <Anchor
             key={item.name}
             href={item.href}
             className={clsx(
+              "nav-anchor hover:text-white"
               // "text-white p-2 hover:text-secondary font-bold",
               // "text-sm md:text-base text-black dark:text-white p-2 hover:bg-dark-hover font-bold",
-              isActive ? "nav-anchor-active" : "nav-anchor"
+              // isActive ? "nav-anchor-active" : "nav-anchor"
             )}
             style={{ transition: "250" }}
           >

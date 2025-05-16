@@ -38,20 +38,38 @@ const AppFooter: React.FC = () => {
   };
 
   return (
-    <Box as="footer" bg="#0B1E16" color="white" py={10} borderTop="1px" borderColor={borderColor}>
+    <Box
+      as="footer"
+      bg="#0B1E16"
+      color="white"
+      py={10}
+      borderTop="1px"
+      borderColor={borderColor}
+    >
       <Container maxW="6xl">
         <SimpleGrid columns={{ base: 1, md: 3 }} spacing={8}>
           {/* Logo & Tagline */}
           <VStack align={{ base: "center", md: "flex-start" }}>
-            <Image src={SolnityLogo} alt="Solnity Logo" width={140} height={40} />
-            <Text fontSize="sm" opacity={0.75}>
-              Empowering Solana developers with sleek, integrated tools.
-            </Text>
+            <Image
+              src={SolnityLogo}
+              alt="Solnity Logo"
+              width={140}
+              height={40}
+              className="rounded-full"
+            />
+            {/* <Text fontSize="sm" opacity={0.75}>
+              BUILT.LAUNCH.FAST
+            </Text> */}
           </VStack>
 
           {/* Links Section */}
           <Stack align={{ base: "center", md: "flex-start" }} spacing={3}>
-            <Heading as="h6" size="sm" textTransform="uppercase" color="#78FFA1">
+            <Heading
+              as="h6"
+              size="sm"
+              textTransform="uppercase"
+              color="#78FFA1"
+            >
               Info
             </Heading>
             {abouts.map(({ label, url }, idx) => (
@@ -68,10 +86,15 @@ const AppFooter: React.FC = () => {
           </Stack>
 
           {/* Placeholder or additional info */}
-          <Stack align={{ base: "center", md: "flex-start" }} spacing={3} opacity={0.75} fontSize="sm">
-            <Text>© Javeline AI 2025. All rights reserved.</Text>
+          <Stack
+            align={{ base: "center", md: "flex-start" }}
+            spacing={3}
+            opacity={0.75}
+            fontSize="sm"
+          >
+            <Text>© JavelinAI 2025. All rights reserved.</Text>
             <HStack spacing={2}>
-              <Text>Built with ♡ by Javeline Team</Text>
+              <Text>Built with ♡ by JavelinAI Team</Text>
             </HStack>
           </Stack>
         </SimpleGrid>
@@ -80,7 +103,20 @@ const AppFooter: React.FC = () => {
         <Box textAlign="right" mt={8}>
           <IconButton
             aria-label="Scroll to top"
-            icon={<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 15l-6-6-6 6"/></svg>}
+            icon={
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <path d="M18 15l-6-6-6 6" />
+              </svg>
+            }
             variant="outline"
             borderColor="#3DFF91"
             color="#78FFA1"
