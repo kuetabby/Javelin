@@ -49,7 +49,7 @@ const MotionBox = motion(Box);
 
 interface Props {}
 
-const TildeIcon = (props) => (
+const TildeIcon = (props: any) => (
   <svg
     width="20"
     height="10"
@@ -68,7 +68,7 @@ const TildeIcon = (props) => (
   </svg>
 );
 
-const RefreshCwAltIcon = (props) => (
+const RefreshCwAltIcon = (props: any) => (
   <svg
     width="18"
     height="18"
