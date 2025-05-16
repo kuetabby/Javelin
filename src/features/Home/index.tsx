@@ -243,7 +243,7 @@ const Home: React.FC<Props> = () => {
                 _hover={{ bg: "#5FFF8F" }}
                 color="black"
               >
-                $SOLNITY
+                $JAVELIN
               </Button>
 
               <Button
@@ -407,7 +407,7 @@ const Home: React.FC<Props> = () => {
             <div className="grid lg:grid-cols-2 gap-12 mb-20">
               <div>
                 <span className="inline-block text-xs px-4 py-1.5 border border-green-400 rounded-full text-green-400 uppercase tracking-wider mb-4">
-                  Why $SOLNITY
+                  Why $JAVELIN
                 </span>
                 <p className="text-sm text-gray-300 max-w-sm mb-6">
                   Why settle for rigid tools when you can grow with AI that

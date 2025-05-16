@@ -76,7 +76,7 @@ const AppFooter: React.FC<Props> = () => {
         <div className="flex flex-col items-center justify-between gap-6 lg:items-end">
           <Image src={SolnityLogo} alt="Solnity Logo" className="w-[140px] object-contain" />
           <p className="text-xs text-gray-500 text-center lg:text-right">
-            <CopyrightOutlined style={{ fontSize: "1em" }} /> Solnity 2025. All rights reserved.
+            <CopyrightOutlined style={{ fontSize: "1em" }} /> JavelinAI 2025. All rights reserved.
           </p>
         </div>
       </div>
