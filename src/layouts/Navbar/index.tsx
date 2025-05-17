@@ -66,7 +66,7 @@ const Navbar = () => {
             className="h-16 w-auto"
           />
           <span className="ml-1 text-white text-xl font-semibold">
-            Javelin AI
+            JavelinAI
           </span>
         </Link>
 

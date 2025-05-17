@@ -1,5 +1,5 @@
 .app-footer {
-  @apply w-full p-0 text-black relative bg-transparent;
+  @apply w-full p-0 text-black relative bg-black;
 }
 
 .app-footer-wrapper {
