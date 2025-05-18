@@ -29,6 +29,7 @@ import {
   Grid,
   Circle,
   VStack,
+  Center,
 } from "@chakra-ui/react";
 // import welcomeBackground from "@/assets/welcome.gif"
 import clsx from "clsx";
@@ -189,7 +190,7 @@ const Home: React.FC<Props> = () => {
                 kanit.className
               )}
             >
-              BUILT. LAUNCH. FAST
+              FASTER. SAFERS. SMARTER
             </MotionBox>
 
             <MotionBox
@@ -202,9 +203,9 @@ const Home: React.FC<Props> = () => {
                 kanitBold.className
               )}
             >
-              SCALE WITH SMART
+              Precision AI, Sharpened by
               <br />
-              AI SYSTEMS
+              Your Data
             </MotionBox>
 
             <MotionBox
@@ -217,8 +218,8 @@ const Home: React.FC<Props> = () => {
                 kanit.className
               )}
             >
-              Whether you’re a startup or an enterprise, our AI grows with you,
-              offering scalable automation and optimization tools.
+              Unleash the true power of Generative AI with enterprise-grade
+              tools to discover, enhance, and govern your most valuable data.
             </MotionBox>
 
             <motion.div
@@ -335,8 +336,8 @@ const Home: React.FC<Props> = () => {
               fontSize="sm"
               lineHeight="1.6"
             >
-              Our AI features are designed for scalability: smart today, smarter
-              tomorrow.
+              JavelinAI gives teams everything they need to build aligned, high
+              performing models
             </Text>
           </VStack>
 
@@ -359,6 +360,7 @@ const Home: React.FC<Props> = () => {
               }}
               gap={{ base: 8, lg: 10 }}
               justifyContent="center"
+              textAlign="center"
             >
               {investments.map(({ title, desc, img }, idx) => (
                 <MotionBox
@@ -378,20 +380,33 @@ const Home: React.FC<Props> = () => {
                   maxW="xs"
                   mx="auto"
                 >
-                  {/* icon */}
-                  <Box w={16} mb={6}>
-                    <Image
-                      src={img}
-                      alt={title}
-                      className="w-full h-auto object-contain"
-                      priority
-                    />
-                  </Box>
+                  {/* icon - centered */}
+                  <Center w="full" mb={6}>
+                    <Box w={16}>
+                      <Image
+                        src={img}
+                        alt={title}
+                        className="w-full h-auto object-contain"
+                        priority
+                      />
+                    </Box>
+                  </Center>
 
-                  <Text fontSize="lg" fontWeight="bold" color="white" mb={3}>
+                  <Text
+                    fontSize="lg"
+                    fontWeight="bold"
+                    color="white"
+                    mb={3}
+                    textAlign="center"
+                  >
                     {title}
                   </Text>
-                  <Text fontSize="sm" color="gray.300" lineHeight="1.5">
+                  <Text
+                    fontSize="sm"
+                    color="gray.300"
+                    lineHeight="1.5"
+                    textAlign="center"
+                  >
                     {desc}
                   </Text>
                 </MotionBox>
