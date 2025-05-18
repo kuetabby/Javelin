@@ -31,6 +31,12 @@ const AppFooter: React.FC = () => {
     { label: "Documentation", url: socialsLink.whitepaper },
   ];
 
+  const products = [
+    { label: "Javelin Engine", url: "/" },
+    { label: "Javelin dApps", url: "/" },
+    { label: "Smart Discovery", url: "/" },
+  ];
+
   const scrollToTop = () => {
     if (typeof window !== "undefined") {
       window.scrollTo({ top: 0, behavior: "smooth" });
@@ -40,14 +46,14 @@ const AppFooter: React.FC = () => {
   return (
     <Box
       as="footer"
-      bg="#0B1E16"
+      bg="#000"
       color="white"
       py={10}
       borderTop="1px"
       borderColor={borderColor}
     >
       <Container maxW="6xl">
-        <SimpleGrid columns={{ base: 1, md: 3 }} spacing={8}>
+        <SimpleGrid columns={{ base: 1, md: 4 }} spacing={4}>
           {/* Logo & Tagline */}
           <VStack align={{ base: "center", md: "flex-start" }}>
             <Image
@@ -63,6 +69,28 @@ const AppFooter: React.FC = () => {
           </VStack>
 
           {/* Links Section */}
+          <Stack align={{ base: "center", md: "flex-start" }} spacing={2}>
+            <Heading
+              as="h6"
+              size="sm"
+              textTransform="uppercase"
+              color="#78FFA1"
+            >
+              Products
+            </Heading>
+            {products.map(({ label, url }, idx) => (
+              <Link key={idx} href={url} passHref>
+                <Text
+                  as="a"
+                  fontSize="sm"
+                  _hover={{ color: linkHover, textDecoration: "underline" }}
+                >
+                  {label}
+                </Text>
+              </Link>
+            ))}
+          </Stack>
+
           <Stack align={{ base: "center", md: "flex-start" }} spacing={3}>
             <Heading
               as="h6"
@@ -70,7 +98,7 @@ const AppFooter: React.FC = () => {
               textTransform="uppercase"
               color="#78FFA1"
             >
-              Info
+              Socials
             </Heading>
             {abouts.map(({ label, url }, idx) => (
               <Link key={idx} href={url} passHref>
@@ -85,45 +113,81 @@ const AppFooter: React.FC = () => {
             ))}
           </Stack>
 
+          <Stack align={{ base: "center", md: "flex-start" }} spacing={3}>
+            <Heading
+              as="h6"
+              size="sm"
+              textTransform="uppercase"
+              color="#78FFA1"
+            >
+              Contact Us
+            </Heading>
+          </Stack>
+
           {/* Placeholder or additional info */}
-          <Stack
+          {/* <Stack
             align={{ base: "center", md: "flex-start" }}
             spacing={3}
             opacity={0.75}
             fontSize="sm"
           >
-            <Text>© JavelinAI 2025. All rights reserved.</Text>
             <HStack spacing={2}>
               <Text>Built with ♡ by JavelinAI Team</Text>
             </HStack>
-          </Stack>
+            <Text>© JavelinAI 2025. All rights reserved.</Text>
+          </Stack> */}
         </SimpleGrid>
 
-        {/* Scroll to top */}
-        <Box textAlign="right" mt={8}>
-          <IconButton
-            aria-label="Scroll to top"
-            icon={
-              <svg
-                width="20"
-                height="20"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <path d="M18 15l-6-6-6 6" />
-              </svg>
-            }
-            variant="outline"
-            borderColor="#3DFF91"
-            color="#78FFA1"
-            _hover={{ bg: "rgba(61,255,145,0.1)" }}
-            onClick={scrollToTop}
-          />
-        </Box>
+        {/* <Stack
+          align={{ base: "center", md: "flex-start" }}
+          spacing={3}
+          opacity={0.75}
+          fontSize="sm"
+        >
+          <HStack spacing={2}>
+            <Text>Built with ♡ by JavelinAI Team</Text>
+          </HStack>
+          <Text>© JavelinAI 2025. All rights reserved.</Text>
+        </Stack> */}
+        <div className="flex flex-wrap items-center justify-between mt-8">
+          <Stack
+            align={{ base: "center", md: "flex-start" }}
+            spacing={3}
+            opacity={0.75}
+            fontSize="sm"
+            className="w-full md:w-1/2"
+          >
+            {/* <HStack spacing={2}>
+              <Text>Built with ♡ by JavelinAI Team</Text>
+            </HStack> */}
+            <Text>© JavelinAI 2025. All rights reserved.</Text>
+          </Stack>
+          {/* Scroll to top */}
+          <Box textAlign="right" className="absolute md:relative right-4">
+            <IconButton
+              aria-label="Scroll to top"
+              icon={
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <path d="M18 15l-6-6-6 6" />
+                </svg>
+              }
+              variant="outline"
+              borderColor="#3DFF91"
+              color="#78FFA1"
+              _hover={{ bg: "rgba(61,255,145,0.1)" }}
+              onClick={scrollToTop}
+            />
+          </Box>
+        </div>
       </Container>
     </Box>
   );
