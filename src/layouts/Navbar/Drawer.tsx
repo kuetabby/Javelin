@@ -49,7 +49,7 @@ export const NavbarDrawer: React.FC<Props> = ({ isOpen, onClose }) => {
         <DrawerCloseButton color="white" size="lg" />
         <DrawerHeader pt={8} px={0}>
           <Text fontSize="2xl" fontWeight="bold" color={accent}>
-            Menu
+            JavelinAI
           </Text>
         </DrawerHeader>
 
@@ -65,14 +65,15 @@ export const NavbarDrawer: React.FC<Props> = ({ isOpen, onClose }) => {
                   as={Link}
                   href={item.href}
                   onClick={onClose}
-                  fontSize="lg"
-                  fontWeight={isActive ? "bold" : "normal"}
-                  color={linkColor}
-                  _hover={{ bg: hoverBg, color: accent }}
-                  px={3}
-                  py={2}
-                  borderRadius="md"
-                  w="full"
+                  className="nav-anchor hover:text-white"
+                  // fontSize="lg"
+                  // fontWeight={isActive ? "bold" : "normal"}
+                  // color={linkColor}
+                  // _hover={{ bg: hoverBg, color: accent }}
+                  // px={3}
+                  // py={2}
+                  // borderRadius="md"
+                  // w="full"
                 >
                   {item.label}
                 </ChakraLink>
@@ -89,7 +90,7 @@ export const NavbarDrawer: React.FC<Props> = ({ isOpen, onClose }) => {
             borderColor="gray.700"
           >
             <Text fontSize="sm" fontWeight="semibold" color="gray.400">
-              Follow us
+              Contact us
             </Text>
             <HStack spacing={4}>
               <ChakraLink

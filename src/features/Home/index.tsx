@@ -444,7 +444,7 @@ const Home: React.FC<Props> = () => {
           </MotionBox>
         </section>
 
-        <section className="relative isolate overflow-hidden py-28 lg:py-36 px-5 lg:px-8 text-white">
+        {/* <section className="relative isolate overflow-hidden py-28 lg:py-36 px-5 lg:px-8 text-white">
           <div className="mx-auto w-full max-w-[1240px]">
             <div className="grid lg:grid-cols-2 gap-12 mb-20">
               <div className="text-center lg:text-left">
@@ -485,7 +485,7 @@ const Home: React.FC<Props> = () => {
                 </Link>
               </div>
             </div>
-            {/* <div id="tokenomics" className="h-[1em] lg:h-[8em] relative z-30" />
+            <div id="tokenomics" className="h-[1em] lg:h-[8em] relative z-30" />
             <section className="relative isolate overflow-hidden py-24 px-6 lg:px-20 text-white bg-black rounded-none lg:rounded-[40px]">
               <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
                 <div className="absolute top-1/2 left-1/2 w-[600px] h-[600px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#59D27933] blur-[120px]" />
@@ -543,9 +543,9 @@ const Home: React.FC<Props> = () => {
                   ))}
                 </div>
               </div>
-            </section> */}
+            </section>
           </div>
-        </section>
+        </section> */}
 
         <div id="how-it-works" />
         <Box
@@ -671,6 +671,7 @@ const Home: React.FC<Props> = () => {
                   }
                   _hover={{ bg: "#5FFF8F" }}
                   mt={2}
+                  className="hidden lg:flex"
                 >
                   Explore Now
                 </Button>
@@ -888,6 +889,35 @@ const Home: React.FC<Props> = () => {
                 </Box>
               ))}
             </Flex>
+            <Button
+              as="a"
+              href={socialsLink.whitepaper}
+              target="_blank"
+              rel="noopener noreferrer"
+              bg="#78FFA1"
+              color="black"
+              fontWeight="semibold"
+              px={6}
+              h="48px"
+              rounded="full"
+              rightIcon={
+                <Box as="span" ml="2px">
+                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                    <path
+                      d="M2 7H12M8 2L13 7L8 12"
+                      stroke="black"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                </Box>
+              }
+              _hover={{ bg: "#5FFF8F" }}
+              className="w-36 mx-auto lg:hidden"
+            >
+              Explore Now
+            </Button>
           </Grid>
         </Box>
 
@@ -972,7 +1002,7 @@ const Home: React.FC<Props> = () => {
 
               <Link href="#">
                 <button className="mt-4 inline-flex items-center gap-2 bg-[#78FFA1] hover:bg-[#5FFF8F] text-black font-semibold px-6 py-3 rounded-full">
-                  Get Started Now
+                  Get Started
                   <svg
                     width="14"
                     height="14"
