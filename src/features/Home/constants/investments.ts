@@ -1,6 +1,6 @@
 import Feature1 from "@/assets/icon_feature_1.png";
-// import Feature2 from "@/assets/icon_feature_2.png";
-// import Feature3 from "@/assets/icon_feature_3.png";
+import Feature2 from "@/assets/icon_feature_2.png";
+import Feature3 from "@/assets/icon_feature_3.png";
 // import Feature4 from "@/assets/icon_feature_4.png";
 
 export const investments = [
@@ -12,12 +12,12 @@ export const investments = [
   {
     title: "Smart Data Discovery",
     desc: "Intelligently surfaces high impact data points from massive datasets, enabling your teams to prioritize what drives model performance. No wasted resources. Just signal over noise.",
-    img: Feature1,
+    img: Feature2,
   },
   {
     title: "Collaborative Data Tagging",
     desc: "Combine AI acceleration with expert-in-the-loop workflows to label data at scale. Build trustworthy ground truths and continuously refine them with real-world feedback.",
-    img: Feature1,
+    img: Feature3,
   },
   // {
   //   title: "Reliability & Ethics Assurance",

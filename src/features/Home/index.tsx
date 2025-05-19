@@ -15,6 +15,13 @@ import bgArch from "@/assets/background_2.png";
 import bgGlow from "@/assets/background_3.png";
 import bgGlow2 from "@/assets/background_4.png";
 
+import IconWebWorkflow from "@/assets/icon_web_1.png";
+import IconLaunchFast from "@/assets/icon_web_2.png";
+
+import IconFeature1 from "@/assets/icon_feature_1.png";
+import IconFeature2 from "@/assets/icon_feature_2.png";
+import IconFeature3 from "@/assets/icon_feature_3.png";
+
 // import "./style.css";
 // import Image from "next/image";
 import Link from "next/link";
@@ -118,14 +125,15 @@ const cardsData = [
     id: 1,
     title: "Start Small, Launch Fast",
     desc: "Get up and running in minutes with ready-to-use AI modules.",
-    hasInternalGlow: true,
-    showExploreMore: true,
+    hasPlaceholderIcon: true,
+    icon: IconLaunchFast,
   },
   {
     id: 2,
     title: "Plug Into Your Workflow",
     desc: "Connect your tools and data sources effortlessly with no coding needed.",
     hasPlaceholderIcon: true,
+    icon: IconWebWorkflow,
     customIcons: [
       { type: "tilde", id: "how-tilde-icon" },
       { type: "refresh", id: "how-refresh-icon" },
@@ -246,7 +254,18 @@ const Home: React.FC<Props> = () => {
                 _hover={{ bg: "whiteAlpha.200" }}
                 color="white"
               >
-                Build AI <ArrowRightOutlined style={{ marginLeft: "0.5em" }} />
+                Build AI{" "}
+                <Box as="span" ml="0.5em">
+                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                    <path
+                      d="M2 7H12M8 2L13 7L8 12"
+                      stroke="white"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                </Box>
               </Button>
 
               <Button
@@ -261,7 +280,17 @@ const Home: React.FC<Props> = () => {
                 borderColor="#78FFA1"
               >
                 Buy $JAVELIN{" "}
-                <ArrowRightOutlined style={{ marginLeft: "0.5em" }} />
+                <Box as="span" ml="0.5em">
+                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                    <path
+                      d="M2 7H12M8 2L13 7L8 12"
+                      stroke="white"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                </Box>
               </Button>
             </motion.div>
 
@@ -604,13 +633,13 @@ const Home: React.FC<Props> = () => {
                   <br />
                   Simple with AI
                 </Text>
-                <Text
+                {/* <Text
                   fontSize={{ base: "sm", md: "md" }}
                   color="gray.300"
                   maxW={{ base: "full", md: "md" }}
                 >
                   -
-                </Text>
+                </Text> */}
                 <Button
                   as="a"
                   href={socialsLink.whitepaper}
@@ -643,7 +672,7 @@ const Home: React.FC<Props> = () => {
                   _hover={{ bg: "#5FFF8F" }}
                   mt={2}
                 >
-                  Get Started
+                  Explore Now
                 </Button>
               </VStack>
             </MotionBox>
@@ -691,6 +720,7 @@ const Home: React.FC<Props> = () => {
                       ))}
                     </VStack>
                   )}
+
                   <MotionBox
                     variants={fade}
                     initial="hidden"
@@ -707,12 +737,13 @@ const Home: React.FC<Props> = () => {
                     bg="rgba(14, 14, 14, 0.80)"
                     backdropFilter="blur(12px)"
                     p={{ base: 6, md: 8 }}
-                    minH={
-                      index === 0 ? { base: "230px", md: "250px" } : undefined
-                    }
-                    h={index === 0 ? "full" : "auto"}
+                    // minH={
+                    //   index === 0 ? { base: "230px", md: "250px" } : undefined
+                    // }
+                    // h={index === 0 ? "full" : "auto"}
+                    h="auto"
                   >
-                    {card.hasInternalGlow && index === 0 && (
+                    {/* {card.hasInternalGlow && index === 0 && (
                       <Box
                         position="absolute"
                         inset="0"
@@ -723,8 +754,43 @@ const Home: React.FC<Props> = () => {
                         zIndex={-1}
                         pointerEvents="none"
                       />
-                    )}
-                    {index === 0 ? (
+                    )} */}
+                    <Flex align="flex-start" gap={{ base: 4, md: 5 }}>
+                      {card.hasPlaceholderIcon && (
+                        <Box
+                          bg="gray.700Alpha.400"
+                          w={{ base: "80px", md: "100px" }}
+                          h={{ base: "60px", md: "75px" }}
+                          rounded="lg"
+                          flexShrink={0}
+                          borderWidth="1px"
+                          borderColor="gray.600Alpha.500"
+                        >
+                          <Image
+                            src={card.icon}
+                            alt="web-workflow"
+                            className="w-auto h-full m-auto"
+                          />
+                        </Box>
+                      )}
+                      <Box>
+                        <Text
+                          as="h3"
+                          fontWeight="semibold"
+                          fontSize={{ base: "lg", md: "xl" }}
+                          color="white"
+                          mb={2}
+                        >
+                          {" "}
+                          {card.title}{" "}
+                        </Text>
+                        <Text fontSize="sm" color="gray.300">
+                          {" "}
+                          {card.desc}{" "}
+                        </Text>
+                      </Box>
+                    </Flex>
+                    {/* {index === 0 ? (
                       <Flex direction="column" justify="space-between" h="full">
                         <Box>
                           <Text
@@ -792,7 +858,13 @@ const Home: React.FC<Props> = () => {
                             flexShrink={0}
                             borderWidth="1px"
                             borderColor="gray.600Alpha.500"
-                          />
+                          >
+                            <Image
+                              src={IconWebWorkflow}
+                              alt="web-workflow"
+                              className="w-auto h-full m-auto"
+                            />
+                          </Box>
                         )}
                         <Box>
                           <Text
@@ -811,7 +883,7 @@ const Home: React.FC<Props> = () => {
                           </Text>
                         </Box>
                       </Flex>
-                    )}
+                    )} */}
                   </MotionBox>
                 </Box>
               ))}
@@ -872,11 +944,7 @@ const Home: React.FC<Props> = () => {
             {/* Left Card */}
             <div className="relative flex flex-col gap-8 rounded-[28px] border border-[#2DFF95]/20 px-8 py-10">
               <div className="flex gap-4">
-                {[
-                  "/icons/user.svg",
-                  "/icons/music.svg",
-                  "/icons/chart.svg",
-                ].map((icon, idx) => (
+                {[IconFeature1, IconFeature2, IconFeature3].map((icon, idx) => (
                   <div
                     key={idx}
                     className="w-10 h-10 flex items-center justify-center rounded-full border border-[#3DFF91]"

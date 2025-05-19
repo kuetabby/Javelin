@@ -33,8 +33,8 @@ const AppFooter: React.FC = () => {
 
   const products = [
     { label: "Javelin Engine", url: "/" },
-    { label: "Javelin dApps", url: "/" },
-    { label: "Smart Discovery", url: "/" },
+    { label: "Collaborative Data Tagging", url: "/" },
+    { label: "Smart Data Discovery", url: "/" },
   ];
 
   const scrollToTop = () => {
@@ -49,6 +49,7 @@ const AppFooter: React.FC = () => {
       bg="#000"
       color="white"
       py={10}
+      // px={{ base: 2, lg: 4 }}
       borderTop="1px"
       borderColor={borderColor}
     >
@@ -91,7 +92,7 @@ const AppFooter: React.FC = () => {
             ))}
           </Stack>
 
-          <Stack align={{ base: "center", md: "flex-start" }} spacing={3}>
+          <Stack align={{ base: "center", md: "flex-start" }} spacing={2}>
             <Heading
               as="h6"
               size="sm"
@@ -113,7 +114,7 @@ const AppFooter: React.FC = () => {
             ))}
           </Stack>
 
-          <Stack align={{ base: "center", md: "flex-start" }} spacing={3}>
+          <Stack align={{ base: "center", md: "flex-start" }} spacing={2}>
             <Heading
               as="h6"
               size="sm"
