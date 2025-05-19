@@ -9,7 +9,7 @@ import "./globals.css";
 
 const app_title = "JavelinAI";
 const app_name = "JavelinAI";
-const description = "";
+const description = "Scaling made simple by AI";
 
 export const metadata: Metadata = {
   title: app_title,
