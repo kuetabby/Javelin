@@ -18,6 +18,13 @@ import bgGlow2 from "@/assets/background_4.png";
 import IconWebWorkflow from "@/assets/icon_web_1.png";
 import IconLaunchFast from "@/assets/icon_web_2.png";
 
+const providers = [
+  { name: "OpenAI", logo: "/openai.png" },
+  { name: "Adept", logo: "/adept.webp" },
+  { name: "Meta", logo: "/meta.webp" },
+  { name: "Deepseek", logo: "/deepseekz.png" },
+];
+
 import IconFeature1 from "@/assets/icon_feature_1.png";
 import IconFeature2 from "@/assets/icon_feature_2.png";
 import IconFeature3 from "@/assets/icon_feature_3.png";
@@ -119,7 +126,6 @@ const fade = {
   show: { opacity: 1, y: 0, transition: { duration: 0.7 } },
 };
 
-/* kartu kanan – tetap Solvra */
 const cardsData = [
   {
     id: 1,
@@ -970,6 +976,28 @@ const Home: React.FC<Props> = () => {
             className="absolute -z-10 right-[-10%] bottom-[-10%] w-[900px] h-auto object-contain"
           />
 
+          {/* <section className="w-full text-white py-16 px-4">
+            <h2 className="text-center text-sm tracking-widest text-[#59D279] mb-12">
+              GENERATIVE AI PROVIDERS WE PARTNER WITH:
+            </h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+              {providers.map((provider) => (
+                <div
+                  key={provider.name}
+                  className="border border-white/10 rounded-2xl p-6 flex items-center justify-center h-32 hover:border-[#59D279]/50 transition-all duration-300 bg-white/5"
+                >
+                  <Image
+                    src={provider.logo}
+                    alt={provider.name}
+                    width={provider.name === "Deepseek" ? 180 : 120}
+                    height={40}
+                    className="object-contain"
+                  />
+                </div>
+              ))}
+            </div>
+          </section> */}
+
           <div className="mx-auto w-full max-w-[1240px] px-5 lg:px-8 grid grid-cols-1 lg:grid-cols-[minmax(0,580px)_minmax(0,420px)] gap-16 items-center">
             {/* Left Card */}
             <div className="relative flex flex-col gap-8 rounded-[28px] border border-[#2DFF95]/20 px-8 py-10">
@@ -996,8 +1024,26 @@ const Home: React.FC<Props> = () => {
 
             {/* Right Side */}
             <div className="flex flex-col gap-6 items-start justify-start">
-              <div className="rounded-[20px] border border-[#3DFF91]/20 p-4 md:p-6 w-full h-[240px] md:h-[280px]">
-                {/* Placeholder for content/image */}
+              <div className="w-full flex flex-col items-center">
+                <div className="rounded-[20px] border border-[#3DFF91]/20 p-4 md:p-6 w-full h-[240px] md:h-[280px] flex flex-wrap items-center justify-center gap-6 bg-black">
+                  <p className="text-sm  text-white tracking-widest uppercase  text-center">
+                    GENERATIVE AI PROVIDERS WE PARTNER WITH
+                  </p>
+                  {providers.map((provider) => (
+                    <div
+                      key={provider.name}
+                      className="flex items-center justify-center h-20 w-40"
+                    >
+                      <Image
+                        src={provider.logo}
+                        alt={provider.name}
+                        width={provider.name === "Deepseek" ? 200 : 120}
+                        height={40}
+                        className="object-contain"
+                      />
+                    </div>
+                  ))}
+                </div>
               </div>
 
               <Link href="#">

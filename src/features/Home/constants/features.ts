@@ -29,6 +29,5 @@ import AdBlocker from "@/assets/ad_blocker.png";
 
 export const features = [
   { label: "Future-Ready Strategies", variant: "arrow" },
-  { label: "24/7 Customer Support", variant: "minus" },
   { label: "Scalable Automation Tools", variant: "arrow" },
 ];
