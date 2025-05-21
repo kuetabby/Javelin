@@ -1025,24 +1025,27 @@ const Home: React.FC<Props> = () => {
             {/* Right Side */}
             <div className="flex flex-col gap-6 items-start justify-start">
               <div className="w-full flex flex-col items-center">
-                <div className="rounded-[20px] border border-[#3DFF91]/20 p-4 md:p-6 w-full h-[240px] md:h-[280px] flex flex-wrap items-center justify-center gap-6 bg-black">
-                  <p className="text-sm  text-white tracking-widest uppercase  text-center">
+                <div className="rounded-[20px] border border-[#3DFF91]/20 p-4 md:p-6 w-full bg-black">
+                  <p className="text-sm text-white tracking-widest uppercase text-center mb-6">
                     GENERATIVE AI PROVIDERS WE PARTNER WITH
                   </p>
-                  {providers.map((provider) => (
-                    <div
-                      key={provider.name}
-                      className="flex items-center justify-center h-20 w-40"
-                    >
-                      <Image
-                        src={provider.logo}
-                        alt={provider.name}
-                        width={provider.name === "Deepseek" ? 200 : 120}
-                        height={40}
-                        className="object-contain"
-                      />
-                    </div>
-                  ))}
+
+                  <div className="grid grid-cols-2 gap-y-8 gap-x-6 place-items-center">
+                    {providers.map((provider) => (
+                      <div
+                        key={provider.name}
+                        className="w-full max-w-[140px] flex items-center justify-center"
+                      >
+                        <Image
+                          src={provider.logo}
+                          alt={provider.name}
+                          width={130}
+                          height={80}
+                          className="object-contain w-full h-auto"
+                        />
+                      </div>
+                    ))}
+                  </div>
                 </div>
               </div>
 
