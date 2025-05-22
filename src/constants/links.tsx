@@ -3,7 +3,7 @@ export const pairAddress = "-";
 
 export const socialsLink = {
   // whitepaper: "/",
-  whitepaper: "/",
+  whitepaper: "https://docs.usejavelinai.com",
   twitter: "https://x.com/usejavelinai",
   telegram: "https://t.me/JavelinAIGroup",
   medium: "https://medium.com",
