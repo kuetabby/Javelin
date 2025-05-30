@@ -1,5 +1,5 @@
-export const contractAddress = "-";
-// 0x8d19EFC7D3c8B8C3d7D561F0D849f9BB4256D23E
+export const contractAddress = "0x8d19EFC7D3c8B8C3d7D561F0D849f9BB4256D23E";
+
 export const pairAddress = "-";
 
 export const socialsLink = {
