@@ -236,6 +236,19 @@ const Home: React.FC<Props> = () => {
               tools to discover, enhance, and govern your most valuable data.
             </MotionBox>
 
+            <MotionBox
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.75, ease: "easeInOut", delay: 0.2 }}
+              viewport={{ once: false, amount: 0.6 }}
+              className={clsx(
+                "mt-6 max-w-[650px] text-sm sm:text-base text-[#CBCBCB] uppercase",
+                kanit.className
+              )}
+            >
+              {contractAddress}
+            </MotionBox>
+
             <motion.div
               className="mt-10 flex flex-wrap gap-4"
               animate={{ y: [0, -10, 0] }}
@@ -248,7 +261,7 @@ const Home: React.FC<Props> = () => {
             >
               <Button
                 as="a"
-                href={socialsLink.whitepaper}
+                href={socialsLink.bot}
                 target="_blank"
                 rel="noopener"
                 rounded="full"
@@ -275,6 +288,10 @@ const Home: React.FC<Props> = () => {
               </Button>
 
               <Button
+                as="a"
+                href={findUsLink.uniswap}
+                target="_blank"
+                rel="noopener noreferrer"
                 rounded="full"
                 px={8}
                 py={6}
@@ -648,7 +665,7 @@ const Home: React.FC<Props> = () => {
                 </Text> */}
                 <Button
                   as="a"
-                  href={socialsLink.whitepaper}
+                  href={socialsLink.bot}
                   target="_blank"
                   rel="noopener noreferrer"
                   bg="#78FFA1"
@@ -897,7 +914,7 @@ const Home: React.FC<Props> = () => {
             </Flex>
             <Button
               as="a"
-              href={socialsLink.whitepaper}
+              href={socialsLink.bot}
               target="_blank"
               rel="noopener noreferrer"
               bg="#78FFA1"
@@ -1049,7 +1066,7 @@ const Home: React.FC<Props> = () => {
                 </div>
               </div>
 
-              <Link href="#">
+              <Link href={socialsLink.bot} target="_blank" rel="noopener">
                 <button className="mt-4 inline-flex items-center gap-2 bg-[#78FFA1] hover:bg-[#5FFF8F] text-black font-semibold px-6 py-3 rounded-full">
                   Get Started
                   <svg

@@ -1,4 +1,5 @@
 export const contractAddress = "-";
+// 0x8d19EFC7D3c8B8C3d7D561F0D849f9BB4256D23E
 export const pairAddress = "-";
 
 export const socialsLink = {
@@ -8,7 +9,7 @@ export const socialsLink = {
   telegram: "https://t.me/JavelinAIGroup",
   medium: "https://medium.com",
   email: "mailto:support@usejavelinai.com",
-  bot: "https://t.me/",
+  bot: "https://build.usejavelinai.com",
 };
 
 export const findUsLink = {
