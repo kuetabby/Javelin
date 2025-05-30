@@ -80,15 +80,16 @@ const AppFooter: React.FC = () => {
               Products
             </Heading>
             {products.map(({ label, url }, idx) => (
-              <Link key={idx} href={url} passHref>
-                <Text
-                  as="a"
-                  fontSize="sm"
-                  _hover={{ color: linkHover, textDecoration: "underline" }}
-                >
-                  {label}
-                </Text>
-              </Link>
+              // <Link key={idx} href={url} passHref>
+              <Text
+                key={idx}
+                as="a"
+                fontSize="sm"
+                _hover={{ color: linkHover, textDecoration: "underline" }}
+              >
+                {label}
+              </Text>
+              // </Link>
             ))}
           </Stack>
 
