@@ -32,6 +32,7 @@ export const NavbarDrawer: React.FC<Props> = ({ isOpen, onClose }) => {
     "rgba(0,255,127,0.1)",
     "rgba(0,255,127,0.1)"
   );
+  const linkHover = useColorModeValue("#78FFA1", "#78FFA1");
 
   if (!isMounted) return null;
 
@@ -92,24 +93,13 @@ export const NavbarDrawer: React.FC<Props> = ({ isOpen, onClose }) => {
             <Text fontSize="sm" fontWeight="semibold" color="gray.400">
               Contact us
             </Text>
-            <HStack spacing={4}>
-              <ChakraLink
-                href={socialsLink.twitter}
-                isExternal
-                onClick={onClose}
-                _hover={{ color: accent }}
-              >
-                <TwitterIcon />
-              </ChakraLink>
-              <ChakraLink
-                href={socialsLink.telegram}
-                isExternal
-                onClick={onClose}
-                _hover={{ color: accent }}
-              >
-                <TeleIcon />
-              </ChakraLink>
-            </HStack>
+            <Link
+              href={socialsLink.email}
+              rel="noopener noreferrer"
+              className={`text-gray-400 underline underline-offset-4 hover:${linkHover} no-underline`}
+            >
+              support@usejavelinai.com
+            </Link>
           </VStack>
         </DrawerBody>
       </DrawerContent>

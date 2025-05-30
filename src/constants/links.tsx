@@ -7,7 +7,7 @@ export const socialsLink = {
   twitter: "https://x.com/usejavelinai",
   telegram: "https://t.me/JavelinAIGroup",
   medium: "https://medium.com",
-  email: "mailto:",
+  email: "mailto:support@usejavelinai.com",
   bot: "https://t.me/",
 };
 

@@ -123,6 +123,13 @@ const AppFooter: React.FC = () => {
             >
               Contact Us
             </Heading>
+            <Link
+              href={socialsLink.email}
+              rel="noopener noreferrer"
+              className={`underline underline-offset-4 hover:${linkHover} no-underline`}
+            >
+              support@usejavelinai.com
+            </Link>
           </Stack>
 
           {/* Placeholder or additional info */}
